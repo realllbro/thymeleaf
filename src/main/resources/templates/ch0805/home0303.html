@@ -1,0 +1,22 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Home</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<th:block th:each="card : ${member.cardList}">
+		<span th:text="${card.no}">card.no</span>
+		<span th:text="${card.validMonth}">card.validMonth</span>
+		<br />
+	</th:block>
+	
+	<br />
+	
+	<th:block th:each="card : ${member.cardList}">
+		[[${card.no}]]
+		[[${card.validMonth}]]
+		<br />
+	</th:block>	
+</body>
+</html>

@@ -1,0 +1,32 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+</head>
+<body>
+<form th:object="${member}">
+  <table border ="1" >
+      <tr>
+          <td>${member.userId}</td>
+          <td th:text="*{userId}">userId</td>
+      </tr>
+      <tr>
+          <td>${member.password}</td>
+          <td th:text="*{password}">password</td>
+      </tr>
+      <tr>
+          <td>${member.userName}</td>
+          <td th:text="*{userName}">userName</td>
+      </tr>
+      <tr>
+          <td>${member.email}</td>
+          <td th:text="*{email}">email</td>
+      </tr>
+      <tr>
+          <td>${member.dateOfBirth}</td>
+          <td th:text="*{dateOfBirth}">dateOfBirth</td>
+      </tr>
+  </table>
+</form>
+</body>
+</html>

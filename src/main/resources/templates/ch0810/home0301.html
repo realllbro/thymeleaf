@@ -1,0 +1,98 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Home</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<td>${str}</td>
+			<td th:text="${str}"></td>
+		</tr>
+		<tr>
+			<td>${#strings.contains(str, 'Hello')}</td>	
+			<td th:text="${#strings.contains(str, 'Hello')}"></td>
+		</tr>
+		<tr>
+			<td>${#strings.containsIgnoreCase(str, 'Hello')}</td>	
+			<td th:text="${#strings.containsIgnoreCase(str, 'Hello')}"></td>
+		</tr>
+		<tr>
+			<td>${#strings.startsWith(str, 'Hello')}</td>	
+			<td th:text="${#strings.startsWith(str, 'Hello')}"></td>
+		</tr>
+		<tr>
+			<td>${#strings.endsWith(str, 'World!')}</td>	
+			<td th:text="${#strings.endsWith(str, 'World!')}"></td>
+		</tr>
+		<tr>
+			<td>${#strings.indexOf(str, 'World!')}</td>	
+			<td th:text="${#strings.indexOf(str, 'World!')}"></td>
+		</tr>
+		<tr>
+			<td>${#strings.length(str)}</td>	
+			<td th:text="${#strings.length(str)}"></td>
+		</tr>
+		<tr>
+			<td>${#strings.escapeXml(str)}</td>	
+			<td th:text="${#strings.escapeXml(str)}"></td>
+		</tr>
+		<tr>
+			<td>${#strings.replace(str, 'Hello', 'Hi')}</td>	
+			<td th:text="${#strings.replace(str, 'Hello', 'Hi')}"></td>
+		</tr>
+		<tr>
+			<td>${#strings.toLowerCase(str)}</td>	
+			<td th:text="${#strings.toLowerCase(str)}"></td>
+		</tr>
+		<tr>
+			<td>${#strings.toUpperCase(str)}</td>	
+			<td th:text="${#strings.toUpperCase(str)}"></td>
+		</tr>
+		<tr>
+			<td>${#strings.trim(str)}</td>	
+			<td th:text="${#strings.trim(str)}"></td>
+		</tr>
+		<tr>
+			<td>${#strings.substring(str, 7, 12)}</td>	
+			<td th:text="${#strings.substring(str, 7, 12)}"></td>
+			</tr>
+		<tr>
+			<td>${#strings.substringAfter(str, 'World')}</td>
+			<td th:text="${#strings.substringAfter(str, 'World')}"></td>
+		</tr>
+		<tr>
+			<td>${#strings.substringBefore(str, 'World')}</td>	
+			<td th:text="${#strings.substringBefore(str, 'World')}"></td>
+		</tr>
+		<tr>
+			<td>tokenStr:${#strings.listSplit(str,' ')}</td>
+			<td>	
+				<ul>
+					<li th:each="tokenStr:${#strings.listSplit(str,' ')}">[[${tokenStr}]]</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td>tokenStr:${#strings.listSplit(str,' ')}</td>
+			<td>	
+				<ul>
+					<li th:each="tokenStr:${#strings.listSplit(str,' ')}">[[${tokenStr}]]</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div>strArray=${#strings.listSplit(str,' ')}</div>
+				<div>${#strings.arrayJoin(strArray, '-')}</div>
+			</td>
+			<td>		
+				<div th:with="strArray=${#strings.listSplit(str,' ')}">
+					<p th:text="${#strings.arrayJoin(strArray, '-')}">join : ${#strings.join(strArray, "-")} </p>
+				</div>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

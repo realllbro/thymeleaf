@@ -1,0 +1,19 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+</head>
+<body>
+  <h4>절대 URL</h4>
+  <a th:href="@{http://localhost:8080/board/list}">list</a>
+
+  <h4>상대 URL - Context-relative</h4>
+  <a th:href="@{/board/list}">list</a>
+
+  <h4>상대 URL - Page-relative</h4>
+  <a th:href="@{board/list}">list</a>
+
+  <h4>상대 URL - Server-relative</h4>
+  <a th:href="@{~/board/list}">list</a>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Home</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<table border="1">
+	<tr>
+		<td>${now}</td>
+		<td th:text="${now}"></td>
+	</tr>
+	<tr>
+		<td>${#temporals.format(now, 'yyyy-MM-dd')}</td>
+		<td th:text="${#temporals.format(now, 'yyyy-MM-dd')}"></td>
+	</tr>
+	<tr>
+		<td>${#temporals.format(now, 'yyyy-MM-dd HH:mm:ss')}</td>	
+		<td th:text="${#temporals.format(now, 'yyyy-MM-dd HH:mm:ss')}"></td>
+	</tr>
+	<tr>
+		<td>${#temporals.format(now, 'a h:mm')}</td>
+		<td th:text="${#temporals.format(now, 'a h:mm')}"></td>
+	</tr>
+	<tr>
+		<td>${#temporals.format(now, 'z a h:mm')}</td>	
+		<td th:text="${#temporals.format(now, 'z a h:mm')}"></td>
+	</tr>
+	<tr>
+		<td>timeValue=${#temporals.createToday()}</td>	
+		<td>
+			<div th:with="timeValue=${#temporals.createToday()}">
+				<p>[[${timeValue}]]</p>
+			</div>
+		</td>
+	</tr>
+</table>
+</body>
+</html>

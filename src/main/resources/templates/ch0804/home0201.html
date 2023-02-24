@@ -1,0 +1,20 @@
+<!--타임리프가 사용된다는 것을 나타낸다.-->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+</head>
+<body>
+    <h1>Home0201</h1>
+
+    <form id="board" action="success.html" th:action="@{ch0804/register}" method="POST">
+        <table>
+            <tr>
+                <td>Title</td>
+                <td><input type="text" name="title"/></td>
+            </tr>
+        </table>
+        <button type="submit" id="btnRegister">Register</button>
+    </form>
+</body>
+</html>

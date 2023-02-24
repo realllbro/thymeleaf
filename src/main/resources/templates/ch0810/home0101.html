@@ -1,0 +1,36 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Home</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<table border="1">
+	<tr>
+		<td>${coin}</td>
+		<td th:text="${coin}"></td>
+	</tr>
+	<tr>
+		<td>${#numbers.formatInteger(coin,3,'COMMA')}</td>
+		<td th:text="${#numbers.formatInteger(coin,3,'COMMA')}"></td>
+	</tr>
+	<tr>
+		<td>${#numbers.formatCurrency(coin)}</td>
+		<td th:text="${#numbers.formatCurrency(coin)}"></td>
+	</tr>
+	<tr>
+		<td>
+			<div>priceValue=99.87654</div>
+			<div>${#numbers.formatInteger(priceValue,3,'COMMA')}</div>
+			<div>${#numbers.formatDecimal(priceValue,5,10,'POINT')}</div>
+		</td>
+		<td>
+		<div th:with="priceValue=99.87654">
+			<p th:text="${#numbers.formatInteger(priceValue,3,'COMMA')}"></p>
+			<p th:text="${#numbers.formatDecimal(priceValue,5,10,'POINT')}"></p>
+		</div>
+		</td>
+	</tr>
+</table>
+</body>
+</html>
